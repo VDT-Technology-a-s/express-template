@@ -1,13 +1,15 @@
 // router pro API
 
 // moduly
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const templateService = require("../services/template-service.js");
 
 // GET: /app-api/template/
 // template endpoint
 router.get('/template', function(req, res, next) {
-  res.send('respond with a resource');
+  var output = templateService.hello("world");
+  res.send(output);
 });
 
 module.exports = router;

@@ -1,8 +1,8 @@
 // router pro přesměrování na HTML stránky
 
 // moduly
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 // GET: /
 // vyrenderuje uvodni stranku
