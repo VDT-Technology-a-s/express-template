@@ -1,7 +1,7 @@
 {
-  "name": "strakonice",
-  "version": "0.0.0",
-  "private": true,
+  "name": "nazev_aplikace",
+  "version": "1.0.0",
+  "author": "VDT technology a.s.",
   "scripts": {
     "start": "node ./bin/www"
   },

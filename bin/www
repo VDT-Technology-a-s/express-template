@@ -1,38 +1,23 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
 var app = require('../app');
-var debug = require('debug')('strakonice:server');
+var debug = require('debug')('express-app:server');
 var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
-
+// získání portu a nastavení portu v express aplikaci
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-
+// vytvoření HTTP serveru
 var server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
-
+// zapnutí serveru
 server.listen(port);
+console.log("Server is running...")
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
-
+// normalizace portu
 function normalizePort(val) {
   var port = parseInt(val, 10);
 
@@ -49,10 +34,7 @@ function normalizePort(val) {
   return false;
 }
 
-/**
- * Event listener for HTTP server "error" event.
- */
-
+// error listener
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -62,7 +44,7 @@ function onError(error) {
     ? 'Pipe ' + port
     : 'Port ' + port;
 
-  // handle specific listen errors with friendly messages
+  // error handler
   switch (error.code) {
     case 'EACCES':
       console.error(bind + ' requires elevated privileges');
@@ -77,10 +59,7 @@ function onError(error) {
   }
 }
 
-/**
- * Event listener for HTTP server "listening" event.
- */
-
+// event listener
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'

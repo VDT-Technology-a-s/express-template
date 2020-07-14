@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Template aplikace</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS styly -->
+    <link rel="stylesheet" id="css-cdn" href="stylesheets/mdsp-css.min.css" />
+    <link rel="stylesheet"  href="stylesheets/style.css" />
+
+    <!-- front-end scripty -->
+    <script id="mdsp-webcomponents-loader" type="text/javascript" src="https://static.eu1.mindsphere.io/webcomponents/v1/index.js"></script>
+    <script type="text/javascript" src="https://static.eu1.mindsphere.io/osbar/v4/js/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>   
+</head>
+
+<body>
+    <div id="_mdspcontent" class="mdsp mdsp-defaults forceDefaultElements">
+        <div class="appWrapper">
+
+            <div
+                class="appWrapper__regions has-appBar appWrapper__regions--pushLayout">
+
+                <section class="mainRegion">
+                    {{{body}}}
+                </section>
+            </div>
+
+            <ul class="appWrapper__appBar">             
+                <li class="appBar__item {{#if active.index}}is-activated{{/if}}">
+                    <a href="/" class="navItem">
+                        <span class="iconMdsp asset" aria-hidden="true"></span>
+                        <span class="item__title">Úvod</span>
+                    </a>
+                </li>
+                <li class="appBar__item {{#if active.template}}is-activated{{/if}}">
+                    <a href="/template" class="navItem">
+                        <span class="iconMdsp person" aria-hidden="true"></span>
+                        <span class="item__title">Template</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
