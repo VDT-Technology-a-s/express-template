@@ -4,6 +4,9 @@ window.addEventListener('load', function () {
 
     // volání API
     fetch("app-api/template")
-    .then(res => console.log(res));
+    .then(res => res.json())
+    .then(data => {
+        outputParagraph.innerHTML = data.text;
+    });
 
 }, false);

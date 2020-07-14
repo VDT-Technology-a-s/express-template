@@ -8,8 +8,8 @@ const templateService = require("../services/template-service.js");
 // GET: /app-api/template/
 // template endpoint
 router.get('/template', function(req, res, next) {
-  var output = templateService.hello("world");
-  res.send(output);
+  var data = templateService.hello("world");
+  res.send(data);
 });
 
 module.exports = router;
